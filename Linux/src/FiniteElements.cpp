@@ -172,7 +172,8 @@ void FiniteElements::setNodeVoltages()
     {
         for (int j = 0; j < nodesPtr->nodeList[i].size(); j++)
         {
-            nodesPtr->nodeList[i][j].NodeVoltage = X[nodesPtr->nodeList[i][j].NodeNumber];
+            if(nodesPtr->nodeList[i][j].NodeNumber >= 0)
+                nodesPtr->nodeList[i][j].NodeVoltage = X[nodesPtr->nodeList[i][j].NodeNumber];
         }
     }
 }
